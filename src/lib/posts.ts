@@ -1,6 +1,8 @@
 import { createClient } from "@/lib/supabase/server";
 import type { PostCategory } from "@/lib/categories";
 
+export const FEED_PAGE_SIZE = 10;
+
 export type FeedPost = {
   id: string;
   category: string;
@@ -78,6 +80,8 @@ export async function getFeedPosts(options?: {
   category?: PostCategory;
   authorId?: string;
   query?: string;
+  offset?: number;
+  limit?: number;
 }): Promise<FeedPost[]> {
   const supabase = await createClient();
   const {
@@ -104,6 +108,11 @@ export async function getFeedPosts(options?: {
   const searchTerm = escapeIlikeQuery(options?.query?.trim() ?? "");
   if (searchTerm) {
     query = query.or(`title.ilike.%${searchTerm}%,content.ilike.%${searchTerm}%`);
+  }
+
+  if (options?.limit !== undefined) {
+    const offset = options.offset ?? 0;
+    query = query.range(offset, offset + options.limit - 1);
   }
 
   const { data, error } = await query.returns<PostRow[]>();
