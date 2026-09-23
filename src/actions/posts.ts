@@ -4,8 +4,18 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { POST_CATEGORIES, type PostCategory } from "@/lib/categories";
+import { getFeedPosts, FEED_PAGE_SIZE, type FeedPost } from "@/lib/posts";
 
 export type CreatePostState = { error: string | null };
+
+export async function loadMoreFeedPosts(
+  offset: number,
+  category?: PostCategory
+): Promise<{ posts: FeedPost[]; hasMore: boolean }> {
+  const posts = await getFeedPosts({ category, offset, limit: FEED_PAGE_SIZE + 1 });
+  const hasMore = posts.length > FEED_PAGE_SIZE;
+  return { posts: posts.slice(0, FEED_PAGE_SIZE), hasMore };
+}
 
 export async function createPost(
   _prevState: CreatePostState,
