@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Pencil } from "lucide-react";
-import { getFeedPosts } from "@/lib/posts";
+import { getFeedPosts, FEED_PAGE_SIZE } from "@/lib/posts";
 import { FEED_FILTERS, POST_CATEGORIES, type PostCategory } from "@/lib/categories";
-import { PostCard } from "@/components/post/PostCard";
+import { FeedList } from "@/components/post/FeedList";
 import { Header } from "@/components/layout/Header";
 
 function isPostCategory(value: string): value is PostCategory {
@@ -17,7 +17,9 @@ export default async function FeedPage({
   const { category: rawCategory } = await searchParams;
   const category = rawCategory && isPostCategory(rawCategory) ? rawCategory : undefined;
 
-  const posts = await getFeedPosts({ category });
+  const fetchedPosts = await getFeedPosts({ category, limit: FEED_PAGE_SIZE + 1 });
+  const hasMore = fetchedPosts.length > FEED_PAGE_SIZE;
+  const posts = fetchedPosts.slice(0, FEED_PAGE_SIZE);
 
   return (
     <div className="min-h-screen bg-slate-50 pb-24">
@@ -47,18 +49,12 @@ export default async function FeedPage({
       </div>
 
       <div className="mx-auto grid max-w-lg grid-cols-1 gap-3.5 px-4 pt-3 sm:max-w-2xl lg:max-w-4xl lg:grid-cols-2 xl:max-w-6xl xl:grid-cols-3">
-        {posts.length === 0 ? (
-          <div className="rounded-2xl border border-slate-100 bg-white p-8 text-center shadow-xs lg:col-span-2 xl:col-span-3">
-            <h4 className="text-sm font-bold text-slate-800">
-              {category ? `'${category}' 카테고리에 글이 없습니다` : "아직 작성된 글이 없습니다"}
-            </h4>
-            <p className="mt-1 text-xs text-slate-400">
-              첫 번째 글을 작성해서 커뮤니티를 시작해보세요!
-            </p>
-          </div>
-        ) : (
-          posts.map((post) => <PostCard key={post.id} post={post} />)
-        )}
+        <FeedList
+          key={category ?? "all"}
+          initialPosts={posts}
+          initialHasMore={hasMore}
+          category={category}
+        />
       </div>
 
       <Link
