@@ -32,9 +32,16 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
+
+# playwright mcp debug artifacts
+/.playwright-mcp/
+
+# stray turbopack dev cache (not .next/)
+/next/
 
 # typescript
 *.tsbuildinfo
