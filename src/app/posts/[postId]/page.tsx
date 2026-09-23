@@ -120,7 +120,7 @@ export default async function PostDetailPage({
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-indigo-50/70 px-3 py-1.5 text-xs font-medium text-indigo-700"
+                className="rounded-full border border-slate-200 bg-slate-100 px-3 py-1 text-sm font-medium text-slate-600"
               >
                 {tag}
               </span>
