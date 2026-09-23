@@ -36,15 +36,15 @@ export default async function MyProfilePage() {
         <div className="mx-auto mt-4 grid max-w-xs sm:max-w-sm lg:max-w-md grid-cols-3 gap-2">
           <div className="rounded-xl bg-slate-50 py-3">
             <p className="text-sm font-bold text-slate-800">{posts.length}</p>
-            <p className="mt-0.5 text-[11px] text-slate-400">내가 쓴 글</p>
+            <p className="mt-0.5 text-[12px] text-slate-400">내가 쓴 글</p>
           </div>
           <div className="rounded-xl bg-rose-50 py-3">
             <p className="text-sm font-bold text-rose-600">{totalLikes}</p>
-            <p className="mt-0.5 text-[11px] text-rose-400">받은 좋아요</p>
+            <p className="mt-0.5 text-[12px] text-rose-400">받은 좋아요</p>
           </div>
           <div className="rounded-xl bg-indigo-50 py-3">
             <p className="text-sm font-bold text-indigo-600">{totalComments}</p>
-            <p className="mt-0.5 text-[11px] text-indigo-400">총 댓글</p>
+            <p className="mt-0.5 text-[12px] text-indigo-400">총 댓글</p>
           </div>
         </div>
       </div>
