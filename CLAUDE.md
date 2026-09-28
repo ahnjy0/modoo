@@ -33,6 +33,7 @@ There are three separate Supabase client constructors, and using the wrong one i
 
 - `src/lib/supabase/client.ts` — browser client, for Client Components.
 - `src/lib/supabase/server.ts` — server client for Server Components/Server Actions/Route Handlers. Reads/writes cookies via `next/headers`; the `setAll` cookie write is wrapped in try/catch because it throws when called from a plain Server Component (session refresh there is handled by `middleware.ts` instead, not by this catch).
+- `src/lib/supabase/config.ts` — the public URL/publishable key all of the above (and `middleware.ts`) read from. Falls back to hardcoded public values with `||` because the Vercel build has been observed injecting these `NEXT_PUBLIC_*` vars as empty strings, which also overrides `.env*` files; read them through this module rather than `process.env` directly.
 - `src/lib/supabase/admin.ts` — `service_role` client that bypasses RLS entirely. Server-only, and only for operations that genuinely need to act outside a user's own permissions (account deletion, admin-confirming a signup — see below). Never import this into anything that reaches the client bundle.
 
 ### Auth flow and the dev-mode signup shortcut
