@@ -72,44 +72,34 @@ export async function signup(
     return { error: "필수 약관(서비스 이용약관, 개인정보 수집·이용)에 동의해주세요." };
   }
 
-  const supabase = await createClient();
-  const { data, error } = await supabase.auth.signUp({
+  // 개발 단계 임시 조치: supabase.auth.signUp()은 "Confirm email" 설정이 켜져 있으면
+  // 호출 시점에 확인 메일을 먼저 발송해서, 기본 메일러의 낮은 발송 한도(rate limit)에 금방 걸린다.
+  // 그래서 admin API로 이미 이메일 확인된 계정을 직접 만들어 메일 발송 자체를 건너뛰고 바로 로그인시킨다.
+  // TODO: 실서비스 오픈 전 반드시 제거하고 supabase.auth.signUp() 기반의 정식 이메일 확인 플로우로 되돌릴 것.
+  //       (그때는 signUp이 이미 가입된 이메일에 에러 대신 identities: []인 가짜 user를 돌려주는
+  //        anti-enumeration 동작도 다시 처리해야 한다.)
+  const admin = createAdminClient();
+  const { error: createError } = await admin.auth.admin.createUser({
     email,
     password,
-    options: { data: { name } },
+    email_confirm: true,
+    user_metadata: { name },
   });
 
-  if (error) {
-    return { error: describeSignupError(error.message) };
+  if (createError) {
+    if (createError.code === "email_exists" || createError.code === "user_already_exists") {
+      return { error: "이미 가입된 이메일입니다. 로그인해주세요." };
+    }
+    return { error: describeSignupError(createError.message) };
   }
 
-  // Supabase는 이미 가입된(확인 완료) 이메일로 재가입을 시도하면 계정 존재 여부를
-  // 노출하지 않기 위해 에러 대신 실제로 존재하지 않는 가짜 user를 담아 성공 응답을 준다.
-  // identities가 빈 배열이면 이 케이스이므로 별도로 걸러낸다.
-  if (data.user && data.user.identities && data.user.identities.length === 0) {
-    return { error: "이미 가입된 이메일입니다. 로그인해주세요." };
-  }
-
-  // 개발 단계 임시 조치: Supabase 프로젝트의 "Confirm email" 대시보드 설정과 무관하게
-  // 이메일 발송 없이 즉시 계정을 활성화하고 로그인시킨다.
-  // TODO: 실서비스 오픈 전 반드시 제거하고 정식 이메일 확인 플로우로 되돌릴 것.
-  if (!data.session && data.user) {
-    const admin = createAdminClient();
-    const { error: confirmError } = await admin.auth.admin.updateUserById(data.user.id, {
-      email_confirm: true,
-    });
-
-    if (confirmError) {
-      return { error: `계정 활성화에 실패했습니다: ${confirmError.message}` };
-    }
-
-    const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
-    if (signInError) {
-      return {
-        error: null,
-        message: "가입이 완료되었습니다. 로그인 페이지에서 다시 로그인해주세요.",
-      };
-    }
+  const supabase = await createClient();
+  const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
+  if (signInError) {
+    return {
+      error: null,
+      message: "가입이 완료되었습니다. 로그인 페이지에서 다시 로그인해주세요.",
+    };
   }
 
   revalidatePath("/", "layout");

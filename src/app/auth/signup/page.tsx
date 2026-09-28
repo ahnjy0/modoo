@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useActionState, useState } from "react";
+import { startTransition, useActionState, useState } from "react";
 import { signup, type AuthFormState } from "@/actions/auth";
 
 const initialState: AuthFormState = { error: null };
@@ -50,7 +50,14 @@ export default function SignUpPage() {
         </div>
 
         <form
-          action={formAction}
+          // action={formAction}을 쓰면 React가 제출 후 폼을 자동 reset해서, 에러로 돌아왔을 때
+          // 약관 체크박스 DOM은 해제되는데 state는 true로 남아 둘이 어긋난다(재동의해도 값이 안 실림).
+          // onSubmit으로 직접 디스패치해 자동 reset을 막고, 입력값도 유지되게 한다.
+          onSubmit={(e) => {
+            e.preventDefault();
+            const formData = new FormData(e.currentTarget);
+            startTransition(() => formAction(formData));
+          }}
           className="space-y-3.5 rounded-3xl border border-slate-100 bg-white p-5 shadow-sm"
         >
           <div>

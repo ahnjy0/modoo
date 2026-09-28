@@ -7,7 +7,7 @@ import type { FeedPost } from "@/lib/posts";
 
 export function PostCard({ post }: { post: FeedPost }) {
   return (
-    <article className="rounded-2xl border border-slate-100 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-md hover:shadow-indigo-100">
+    <article className="rounded-2xl border border-slate-100 bg-white p-4 shadow-sm transition hover:border-indigo-200 hover:shadow-md hover:shadow-indigo-100">
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
           <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full ring-1 ring-slate-100">
@@ -44,7 +44,7 @@ export function PostCard({ post }: { post: FeedPost }) {
       </div>
 
       <Link href={`/posts/${post.id}`} className="block">
-        <span className="mb-1.5 inline-block rounded-full bg-indigo-50 px-2 py-0.5 text-[11px] font-semibold text-indigo-700">
+        <span className="mb-2 inline-block rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700">
           {post.category}
         </span>
         <h3 className="mb-1.5 text-base font-bold leading-snug text-slate-900">
@@ -71,13 +71,13 @@ export function PostCard({ post }: { post: FeedPost }) {
       )}
 
       {post.tags.length > 0 && (
-        <div className="mb-3.5 flex flex-wrap gap-1.5">
+        <div className="mb-3.5 flex flex-wrap gap-2">
           {post.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full bg-slate-100 px-2.5 py-1 text-xs text-slate-600"
+              className="rounded-full border border-slate-200 bg-slate-100 px-3 py-1 text-sm font-medium text-slate-600"
             >
-              {tag}
+              #{tag}
             </span>
           ))}
         </div>

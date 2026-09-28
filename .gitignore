@@ -37,6 +37,12 @@ yarn-error.log*
 # vercel
 .vercel
 
+# playwright mcp debug artifacts
+/.playwright-mcp/
+
+# stray turbopack dev cache (not .next/)
+/next/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
