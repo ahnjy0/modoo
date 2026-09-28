@@ -20,7 +20,7 @@ export default async function SearchPage({
     <div className="min-h-screen bg-slate-50 pb-24">
       <Header />
 
-      <div className="sticky top-[57px] z-20 border-b border-slate-100 bg-white/95 backdrop-blur-md">
+      <div className="sticky top-[57px] z-20 border-b border-slate-100 bg-surface/95 backdrop-blur-md">
         <form action="/search" method="GET" className="mx-auto flex max-w-lg sm:max-w-2xl lg:max-w-4xl xl:max-w-6xl items-center gap-2 px-4 py-3">
           <div className="relative flex-1">
             <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
@@ -29,7 +29,7 @@ export default async function SearchPage({
               type="text"
               defaultValue={query}
               placeholder="제목, 내용으로 검색"
-              className="peer w-full rounded-full border border-slate-200 bg-slate-50 py-2.5 pl-10 pr-9 text-sm text-slate-800 placeholder-slate-400 focus:border-indigo-600 focus:bg-white focus:outline-none"
+              className="peer w-full rounded-full border border-slate-200 bg-slate-50 py-2.5 pl-10 pr-9 text-sm text-slate-800 placeholder-slate-400 focus:border-indigo-600 focus:bg-surface focus:outline-none"
             />
             <Link
               href="/search"
@@ -55,7 +55,7 @@ export default async function SearchPage({
           <>
             <RecentSearches />
 
-            <div className="rounded-2xl border border-slate-100 bg-white p-4 shadow-sm">
+            <div className="rounded-2xl border border-slate-100 bg-surface p-4 shadow-sm">
               <h2 className="mb-2 text-xs font-bold text-slate-800">🔥 인기 키워드</h2>
               {popularTags.length === 0 ? (
                 <p className="text-xs text-slate-400">아직 인기 키워드가 없어요.</p>
@@ -75,7 +75,7 @@ export default async function SearchPage({
             </div>
           </>
         ) : posts.length === 0 ? (
-          <div className="rounded-2xl border border-slate-100 bg-white p-8 text-center shadow-xs">
+          <div className="rounded-2xl border border-slate-100 bg-surface p-8 text-center shadow-xs">
             <h4 className="text-sm font-bold text-slate-800">
               &apos;{query}&apos;에 대한 검색 결과가 없습니다
             </h4>

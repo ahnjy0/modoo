@@ -7,7 +7,7 @@ import type { FeedPost } from "@/lib/posts";
 
 export function PostCard({ post }: { post: FeedPost }) {
   return (
-    <article className="rounded-2xl border border-slate-100 bg-white p-4 shadow-sm transition hover:border-indigo-200 hover:shadow-md hover:shadow-indigo-100">
+    <article className="rounded-2xl border border-slate-100 bg-surface p-4 shadow-sm transition hover:border-indigo-200 hover:shadow-md hover:shadow-indigo-100">
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
           <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full ring-1 ring-slate-100">

@@ -28,8 +28,8 @@ export default async function NotificationsPage() {
   const unreadCount = notifications.filter((n) => !n.isRead).length;
 
   return (
-    <div className="min-h-screen bg-white pb-16">
-      <div className="sticky top-0 z-30 border-b border-slate-100 bg-white/95 backdrop-blur-md">
+    <div className="min-h-screen bg-surface pb-16">
+      <div className="sticky top-0 z-30 border-b border-slate-100 bg-surface/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-lg sm:max-w-2xl lg:max-w-4xl items-center justify-between px-4 py-2.5">
           <div className="flex items-center gap-2">
             <Link
@@ -56,7 +56,7 @@ export default async function NotificationsPage() {
 
       <div className="mx-auto max-w-lg sm:max-w-2xl lg:max-w-4xl px-4 pt-3">
         {notifications.length === 0 ? (
-          <div className="rounded-2xl border border-slate-100 bg-white p-8 text-center shadow-xs">
+          <div className="rounded-2xl border border-slate-100 bg-surface p-8 text-center shadow-xs">
             <h4 className="text-sm font-bold text-slate-800">아직 알림이 없어요</h4>
             <p className="mt-1 text-xs text-slate-400">
               좋아요, 댓글, 팔로우 소식을 여기서 확인할 수 있어요.
@@ -70,7 +70,7 @@ export default async function NotificationsPage() {
                 <div
                   className={`flex items-start gap-3 rounded-2xl border p-3.5 transition ${
                     notification.isRead
-                      ? "border-slate-100 bg-white"
+                      ? "border-slate-100 bg-surface"
                       : "border-indigo-100 bg-indigo-50/50"
                   }`}
                 >
