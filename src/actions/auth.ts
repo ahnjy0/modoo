@@ -78,6 +78,9 @@ export async function signup(
   // TODO: 실서비스 오픈 전 반드시 제거하고 supabase.auth.signUp() 기반의 정식 이메일 확인 플로우로 되돌릴 것.
   //       (그때는 signUp이 이미 가입된 이메일에 에러 대신 identities: []인 가짜 user를 돌려주는
   //        anti-enumeration 동작도 다시 처리해야 한다.)
+  if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    return { error: "서버 설정 문제로 지금은 회원가입을 할 수 없습니다. 잠시 후 다시 시도해주세요." };
+  }
   const admin = createAdminClient();
   const { error: createError } = await admin.auth.admin.createUser({
     email,
