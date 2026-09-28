@@ -136,7 +136,7 @@ export default function PostForm({
               onClick={() => setCategory(cat)}
               className={`whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-semibold transition ${
                 category === cat
-                  ? "bg-indigo-600 text-white shadow-sm shadow-indigo-200"
+                  ? "bg-brand text-white shadow-sm shadow-indigo-200"
                   : "bg-indigo-50/70 text-indigo-700 hover:bg-indigo-100"
               }`}
             >
@@ -240,7 +240,7 @@ export default function PostForm({
         <button
           type="submit"
           disabled={pending || uploading}
-          className="w-full rounded-xl bg-indigo-600 py-3 text-xs font-bold text-white shadow-sm shadow-indigo-200 transition hover:bg-indigo-700 disabled:opacity-60"
+          className="w-full rounded-xl bg-brand py-3 text-xs font-bold text-white shadow-sm shadow-indigo-200 transition hover:bg-brand-hover disabled:opacity-60"
         >
           {pending ? pendingLabel : submitLabel}
         </button>

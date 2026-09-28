@@ -167,7 +167,7 @@ export default function ProfileForm({
       <button
         type="submit"
         disabled={pending || uploading}
-        className="w-full rounded-xl bg-indigo-600 py-2.5 text-xs font-bold text-white shadow-sm shadow-indigo-200 transition hover:bg-indigo-700 disabled:opacity-60"
+        className="w-full rounded-xl bg-brand py-2.5 text-xs font-bold text-white shadow-sm shadow-indigo-200 transition hover:bg-brand-hover disabled:opacity-60"
       >
         {pending ? "저장 중..." : "저장"}
       </button>

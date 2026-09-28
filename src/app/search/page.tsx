@@ -41,7 +41,7 @@ export default async function SearchPage({
           </div>
           <button
             type="submit"
-            className="flex shrink-0 items-center gap-1.5 rounded-full bg-indigo-600 px-4 py-2.5 text-xs font-bold text-white shadow-sm shadow-indigo-200 transition hover:bg-indigo-700 active:scale-95"
+            className="flex shrink-0 items-center gap-1.5 rounded-full bg-brand px-4 py-2.5 text-xs font-bold text-white shadow-sm shadow-indigo-200 transition hover:bg-brand-hover active:scale-95"
           >
             <Search className="h-4 w-4" />
             검색

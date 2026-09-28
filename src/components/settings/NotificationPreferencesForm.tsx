@@ -42,7 +42,7 @@ export default function NotificationPreferencesForm({
             disabled={isPending}
             className="peer sr-only"
           />
-          <span className="absolute inset-0 rounded-full bg-slate-200 transition peer-checked:bg-indigo-600" />
+          <span className="absolute inset-0 rounded-full bg-slate-200 transition peer-checked:bg-brand" />
           <span className="absolute left-0.5 h-4 w-4 rounded-full bg-white shadow transition peer-checked:translate-x-4" />
         </span>
       </label>
