@@ -31,7 +31,7 @@ export default function CommentForm({ postId }: { postId: string }) {
           type="submit"
           disabled={pending}
           aria-label="댓글 등록"
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-indigo-600 text-white transition hover:bg-indigo-700 disabled:opacity-60"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand text-white transition hover:bg-brand-hover disabled:opacity-60"
         >
           <Send className="h-4 w-4" />
         </button>

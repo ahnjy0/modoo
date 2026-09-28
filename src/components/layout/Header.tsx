@@ -28,7 +28,7 @@ export async function Header() {
     <header className="sticky top-0 z-30 border-b border-slate-100 bg-surface/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-lg sm:max-w-2xl lg:max-w-4xl xl:max-w-6xl items-center justify-between px-4 py-3">
         <Link href="/feed" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-indigo-600 text-white shadow-md shadow-indigo-100">
+          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-brand text-white shadow-md shadow-indigo-100">
             <MessageCircle className="h-4 w-4" fill="currentColor" strokeWidth={0} />
           </div>
           <span className="text-lg font-bold tracking-tight text-slate-900">
@@ -45,7 +45,7 @@ export async function Header() {
             >
               <Bell className="h-5 w-5" />
               {unreadCount > 0 && (
-                <span className="absolute -right-1.5 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-rose-500 px-1 text-[9px] font-bold text-white">
+                <span className="absolute -right-1.5 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-rose-500 px-1 text-[9px] font-bold text-white dark:bg-rose-700">
                   {unreadCount > 9 ? "9+" : unreadCount}
                 </span>
               )}

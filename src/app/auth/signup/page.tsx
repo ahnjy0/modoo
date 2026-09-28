@@ -187,7 +187,7 @@ export default function SignUpPage() {
           <button
             type="submit"
             disabled={pending}
-            className="w-full rounded-xl bg-indigo-600 py-3 text-xs font-bold text-white shadow-md shadow-indigo-200 transition hover:bg-indigo-700 disabled:opacity-60"
+            className="w-full rounded-xl bg-brand py-3 text-xs font-bold text-white shadow-md shadow-indigo-200 transition hover:bg-brand-hover disabled:opacity-60"
           >
             {pending ? "가입 중..." : "회원가입 완료"}
           </button>

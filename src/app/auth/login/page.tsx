@@ -14,7 +14,7 @@ export default function LoginPage() {
     <div className="flex min-h-screen items-center justify-center bg-slate-50 px-4">
       <div className="w-full max-w-sm sm:max-w-md lg:max-w-lg">
         <div className="mb-6 flex flex-col items-center text-center">
-          <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-3xl bg-indigo-600 text-white shadow-xl shadow-indigo-200">
+          <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-3xl bg-brand text-white shadow-xl shadow-indigo-200">
             <MessageCircle className="h-8 w-8" fill="currentColor" strokeWidth={0} />
           </div>
           <span className="mb-2 rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700">
@@ -72,7 +72,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={pending}
-            className="w-full rounded-xl bg-indigo-600 py-3 text-xs font-bold text-white shadow-md shadow-indigo-200 transition hover:bg-indigo-700 disabled:opacity-60"
+            className="w-full rounded-xl bg-brand py-3 text-xs font-bold text-white shadow-md shadow-indigo-200 transition hover:bg-brand-hover disabled:opacity-60"
           >
             {pending ? "로그인 중..." : "로그인"}
           </button>

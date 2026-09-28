@@ -64,7 +64,7 @@ export default async function MyProfilePage() {
 
       <Link
         href="/posts/new"
-        className="fixed bottom-20 right-6 z-40 flex items-center gap-2 rounded-full bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-indigo-300/50 transition hover:bg-indigo-700 active:scale-95"
+        className="fixed bottom-20 right-6 z-40 flex items-center gap-2 rounded-full bg-brand px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-indigo-300/50 transition hover:bg-brand-hover active:scale-95"
       >
         <Pencil className="h-4 w-4" />
         글쓰기
