@@ -1,5 +1,6 @@
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
+import { SUPABASE_ANON_KEY, SUPABASE_URL } from "./config";
 
 // 서버 컴포넌트 / Server Action / Route Handler 전용.
 // 서버 컴포넌트에서는 쿠키를 쓸 수 없어 setAll이 실패할 수 있는데,
@@ -8,8 +9,8 @@ export async function createClient() {
   const cookieStore = await cookies();
 
   return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY,
     {
       cookies: {
         getAll() {
