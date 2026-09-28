@@ -25,7 +25,7 @@ export default function CommentForm({ postId }: { postId: string }) {
           type="text"
           required
           placeholder="댓글을 입력하세요"
-          className="w-full rounded-full border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-800 placeholder-slate-400 focus:border-indigo-600 focus:bg-white focus:outline-none"
+          className="w-full rounded-full border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-800 placeholder-slate-400 focus:border-indigo-600 focus:bg-surface focus:outline-none"
         />
         <button
           type="submit"

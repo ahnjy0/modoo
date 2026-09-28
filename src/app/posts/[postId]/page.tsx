@@ -30,8 +30,8 @@ export default async function PostDetailPage({
   const comments = await getCommentsByPostId(postId);
 
   return (
-    <div className="min-h-screen bg-white pb-16">
-      <div className="sticky top-0 z-30 border-b border-slate-100 bg-white/95 backdrop-blur-md">
+    <div className="min-h-screen bg-surface pb-16">
+      <div className="sticky top-0 z-30 border-b border-slate-100 bg-surface/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-lg sm:max-w-2xl lg:max-w-4xl items-center justify-between px-4 py-2.5">
           <div className="flex items-center gap-2">
             <Link

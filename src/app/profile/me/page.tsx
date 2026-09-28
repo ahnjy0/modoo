@@ -29,7 +29,7 @@ export default async function MyProfilePage() {
   return (
     <div className="min-h-screen bg-slate-50 pb-24">
       <Header />
-      <div className="border-b border-slate-100 bg-white px-4 py-6 text-center">
+      <div className="border-b border-slate-100 bg-surface px-4 py-6 text-center">
         <h1 className="text-sm font-bold text-slate-800">
           {profile?.name ?? user.email}님의 내 피드
         </h1>
@@ -51,7 +51,7 @@ export default async function MyProfilePage() {
 
       <div className="mx-auto grid max-w-lg grid-cols-1 gap-3.5 px-4 pt-3 sm:max-w-2xl lg:max-w-4xl lg:grid-cols-2 xl:max-w-6xl xl:grid-cols-3">
         {posts.length === 0 ? (
-          <div className="rounded-2xl border border-slate-100 bg-white p-8 text-center shadow-xs lg:col-span-2 xl:col-span-3">
+          <div className="rounded-2xl border border-slate-100 bg-surface p-8 text-center shadow-xs lg:col-span-2 xl:col-span-3">
             <h4 className="text-sm font-bold text-slate-800">아직 작성한 글이 없습니다</h4>
             <p className="mt-1 text-xs text-slate-400">
               첫 번째 글을 작성해서 커뮤니티를 시작해보세요!

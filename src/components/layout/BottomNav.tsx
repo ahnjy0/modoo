@@ -25,7 +25,7 @@ export function BottomNav() {
   }
 
   return (
-    <nav className="sticky bottom-0 z-40 border-t border-slate-100 bg-white/95 px-4 py-2 shadow-sm backdrop-blur-md">
+    <nav className="sticky bottom-0 z-40 border-t border-slate-100 bg-surface/95 px-4 py-2 shadow-sm backdrop-blur-md">
       <div className="mx-auto flex max-w-lg sm:max-w-2xl lg:max-w-4xl xl:max-w-6xl items-center justify-around">
         {TABS.map((tab) => {
           const isActive =

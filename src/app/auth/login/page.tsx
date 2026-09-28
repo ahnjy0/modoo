@@ -27,7 +27,7 @@ export default function LoginPage() {
 
         <form
           action={formAction}
-          className="space-y-4 rounded-3xl border border-slate-100 bg-white p-5 shadow-sm"
+          className="space-y-4 rounded-3xl border border-slate-100 bg-surface p-5 shadow-sm"
         >
           <div>
             <label
@@ -42,7 +42,7 @@ export default function LoginPage() {
               type="email"
               required
               placeholder="example@modoo.app"
-              className="w-full rounded-xl border border-slate-200 bg-indigo-50/50 px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 transition focus:border-indigo-600 focus:bg-white focus:outline-none focus:ring-1 focus:ring-indigo-600"
+              className="w-full rounded-xl border border-slate-200 bg-indigo-50/50 px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 transition focus:border-indigo-600 focus:bg-surface focus:outline-none focus:ring-1 focus:ring-indigo-600"
             />
           </div>
 
@@ -59,7 +59,7 @@ export default function LoginPage() {
               type="password"
               required
               placeholder="비밀번호를 입력하세요"
-              className="w-full rounded-xl border border-slate-200 bg-indigo-50/50 px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 transition focus:border-indigo-600 focus:bg-white focus:outline-none focus:ring-1 focus:ring-indigo-600"
+              className="w-full rounded-xl border border-slate-200 bg-indigo-50/50 px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 transition focus:border-indigo-600 focus:bg-surface focus:outline-none focus:ring-1 focus:ring-indigo-600"
             />
           </div>
 

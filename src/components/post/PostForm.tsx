@@ -113,8 +113,8 @@ export default function PostForm({
   };
 
   return (
-    <div className="min-h-screen bg-white pb-20">
-      <div className="sticky top-0 z-30 border-b border-slate-100 bg-white/95 backdrop-blur-md">
+    <div className="min-h-screen bg-surface pb-20">
+      <div className="sticky top-0 z-30 border-b border-slate-100 bg-surface/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-lg sm:max-w-2xl lg:max-w-4xl items-center gap-2 px-4 py-2.5">
           <Link
             href={backHref}
@@ -227,7 +227,7 @@ export default function PostForm({
             type="text"
             defaultValue={initialTags}
             placeholder="공백이나 쉼표로 구분해서 입력 (예: 카페투어 원격근무)"
-            className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-sm text-slate-800 placeholder-slate-400 focus:border-indigo-600 focus:bg-white focus:outline-none"
+            className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-sm text-slate-800 placeholder-slate-400 focus:border-indigo-600 focus:bg-surface focus:outline-none"
           />
         </div>
 

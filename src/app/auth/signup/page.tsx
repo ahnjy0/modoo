@@ -58,7 +58,7 @@ export default function SignUpPage() {
             const formData = new FormData(e.currentTarget);
             startTransition(() => formAction(formData));
           }}
-          className="space-y-3.5 rounded-3xl border border-slate-100 bg-white p-5 shadow-sm"
+          className="space-y-3.5 rounded-3xl border border-slate-100 bg-surface p-5 shadow-sm"
         >
           <div>
             <label htmlFor="name" className="mb-1 block text-xs font-bold text-slate-800">
@@ -72,7 +72,7 @@ export default function SignUpPage() {
               minLength={2}
               maxLength={20}
               placeholder="닉네임을 입력하세요"
-              className="w-full rounded-xl border border-slate-200 bg-indigo-50/50 px-3.5 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-indigo-600 focus:bg-white focus:outline-none"
+              className="w-full rounded-xl border border-slate-200 bg-indigo-50/50 px-3.5 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-indigo-600 focus:bg-surface focus:outline-none"
             />
           </div>
 
@@ -86,7 +86,7 @@ export default function SignUpPage() {
               type="email"
               required
               placeholder="example@modoo.com"
-              className="w-full rounded-xl border border-slate-200 bg-indigo-50/50 px-3.5 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-indigo-600 focus:bg-white focus:outline-none"
+              className="w-full rounded-xl border border-slate-200 bg-indigo-50/50 px-3.5 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-indigo-600 focus:bg-surface focus:outline-none"
             />
           </div>
 
@@ -101,7 +101,7 @@ export default function SignUpPage() {
               required
               minLength={8}
               placeholder="8자 이상 입력하세요"
-              className="w-full rounded-xl border border-slate-200 bg-indigo-50/50 px-3.5 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-indigo-600 focus:bg-white focus:outline-none"
+              className="w-full rounded-xl border border-slate-200 bg-indigo-50/50 px-3.5 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-indigo-600 focus:bg-surface focus:outline-none"
             />
           </div>
 
@@ -118,7 +118,7 @@ export default function SignUpPage() {
               type="password"
               required
               placeholder="비밀번호를 다시 입력하세요"
-              className="w-full rounded-xl border border-slate-200 bg-indigo-50/50 px-3.5 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-indigo-600 focus:bg-white focus:outline-none"
+              className="w-full rounded-xl border border-slate-200 bg-indigo-50/50 px-3.5 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-indigo-600 focus:bg-surface focus:outline-none"
             />
           </div>
 

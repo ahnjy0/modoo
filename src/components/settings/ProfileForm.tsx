@@ -120,7 +120,7 @@ export default function ProfileForm({
           type="text"
           required
           defaultValue={initialName}
-          className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-sm text-slate-800 focus:border-indigo-600 focus:bg-white focus:outline-none"
+          className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-sm text-slate-800 focus:border-indigo-600 focus:bg-surface focus:outline-none"
         />
       </div>
 
@@ -135,7 +135,7 @@ export default function ProfileForm({
           required
           defaultValue={initialHandle}
           placeholder="@handle"
-          className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-sm text-slate-800 focus:border-indigo-600 focus:bg-white focus:outline-none"
+          className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-sm text-slate-800 focus:border-indigo-600 focus:bg-surface focus:outline-none"
         />
       </div>
 
@@ -149,7 +149,7 @@ export default function ProfileForm({
           rows={3}
           defaultValue={initialBio}
           placeholder="자기소개를 입력해보세요"
-          className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-sm text-slate-800 focus:border-indigo-600 focus:bg-white focus:outline-none"
+          className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-sm text-slate-800 focus:border-indigo-600 focus:bg-surface focus:outline-none"
         />
       </div>
 

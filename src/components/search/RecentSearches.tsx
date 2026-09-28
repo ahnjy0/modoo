@@ -23,7 +23,7 @@ export default function RecentSearches() {
   }
 
   return (
-    <div className="rounded-2xl border border-slate-100 bg-white p-4 shadow-sm">
+    <div className="rounded-2xl border border-slate-100 bg-surface p-4 shadow-sm">
       <div className="mb-2 flex items-center justify-between">
         <h2 className="text-xs font-bold text-slate-800">🕒 최근 검색어</h2>
         <button

@@ -25,7 +25,7 @@ export default async function FeedPage({
     <div className="min-h-screen bg-slate-50 pb-24">
       <Header />
 
-      <div className="sticky top-[57px] z-20 border-b border-slate-100 bg-white/95 backdrop-blur-md">
+      <div className="sticky top-[57px] z-20 border-b border-slate-100 bg-surface/95 backdrop-blur-md">
         <div className="no-scrollbar mx-auto flex max-w-lg sm:max-w-2xl lg:max-w-4xl xl:max-w-6xl items-center gap-2 overflow-x-auto px-4 py-2">
           {FEED_FILTERS.map((filter) => {
             const isActive = filter === "전체" ? !category : category === filter;

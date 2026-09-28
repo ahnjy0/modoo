@@ -57,7 +57,7 @@ export function FeedList({
 
   if (posts.length === 0) {
     return (
-      <div className="rounded-2xl border border-slate-100 bg-white p-8 text-center shadow-xs lg:col-span-2 xl:col-span-3">
+      <div className="rounded-2xl border border-slate-100 bg-surface p-8 text-center shadow-xs lg:col-span-2 xl:col-span-3">
         <h4 className="text-sm font-bold text-slate-800">
           {category ? `'${category}' 카테고리에 글이 없습니다` : "아직 작성된 글이 없습니다"}
         </h4>
